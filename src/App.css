@@ -3,7 +3,7 @@
     --primary-color: hsl(209, 78%, 47%);
     --second-color: hsl(216, 90%, 36%);
     --light-second-color: hsl(216, 73%, 45%);
-    --white-color: hsl(0, 0%, 98%);
+    --white-color: hsl(0, 0%, 98%); 
     --black-color: hsl(0, 0%, 15%);
     --black-color-light: rgba(38, 38, 38, .2);
 
@@ -19,6 +19,20 @@
 
 
 body {
-    background-color: var(--primary-color);
+    background-color: var(--second-color);
     font-family: var(--text-font);
+}
+
+.baloon {
+    position: absolute;
+    z-index: -1;
+    left: 300px;
+    top: 200px;
+}
+
+.baloonbg {
+    position: absolute;
+    z-index: -2;
+    right: 0;
+    
 }

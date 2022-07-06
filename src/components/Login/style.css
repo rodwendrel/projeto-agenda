@@ -7,6 +7,7 @@
 
 }
 
+
 .Login h1 {
     font-family: var(--display-font);
     font-size: 128px;
@@ -94,3 +95,4 @@
     background-color: var(--white-color);
 
 }
+
