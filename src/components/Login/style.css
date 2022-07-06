@@ -7,7 +7,6 @@
 
 }
 
-
 .Login h1 {
     font-family: var(--display-font);
     font-size: 128px;
@@ -26,7 +25,9 @@
     padding: 25px 15px;
     border-radius: 50px;
     width: 200px;
+    height: 10px;
     text-align: center;
+    line-height: 100%;
     
 
 }
@@ -56,7 +57,7 @@
 }
 
 
-/* Form */
+/* Css formulário */
 
 .login-form h2 {
     color: var(--black-color);
@@ -69,11 +70,22 @@
     border-bottom: 1px solid var(--black-color-light);
 
     color: var(--black-color-light);
+    background-color: var(--white-color);
+    
+
+    outline: none;
 
     margin-top: 50px;
     
     font-family: var(--display-font);
 }
+
+.input:focus, textarea:focus {
+    color: var(--black-color);
+}
+
+
+/* CSS para o botão de login do formulário */
 
 .login {
     background-color: var(--primary-color);

@@ -14,7 +14,7 @@ function LoginForm() {
 
                 <input 
                     placeholder="senha"
-                    type="text"
+                    type="password"
                     className="input password"
                 />
 
