@@ -3,7 +3,7 @@ import './style.css';
 function LoginForm() {
     return(
         <div className="LoginForm">
-            <form className="login-form">
+            <form className="log-in form">
                 <h2>Entre com sua conta</h2>
 
                 <input 
@@ -11,19 +11,16 @@ function LoginForm() {
                     type="text"
                     className="input user"
                 />
-
                 <input 
                     placeholder="senha"
                     type="password"
                     className="input password"
                 />
+                <button className='input login'>Entrar</button>
 
-                <button className='login input'>Entrar</button>
-              
             </form>
 
         </div>
-    )
+    );
 }
-
 export default LoginForm;

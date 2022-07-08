@@ -1,0 +1,59 @@
+.Login {
+    color: var(--white-color);
+
+    display: flex;
+    justify-content: space-around;
+    margin-top: 25vh;
+
+}
+
+.Login h1 {
+    font-family: var(--display-font);
+    font-size: 128px;
+    
+}
+
+.Login p {
+    font-size: 22px;
+}
+
+.Login a {
+    text-decoration: none;
+    color: var(--black-color);
+    font-weight: 600;
+    background-color: var(--white-color);
+    padding: 25px 15px;
+    border-radius: 50px;
+    width: 200px;
+    height: 10px;
+    text-align: center;
+    line-height: 100%;
+    
+
+}
+
+.left-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+
+    gap: 10px;
+}
+
+
+.baloon {
+    position: absolute;
+    z-index: -1;
+    left: 300px;
+    top: 250px;
+}
+
+.baloonbg {
+    position: absolute;
+    z-index: -2;
+    left: 950px;
+    width: 50vw;
+    height: 100vh;
+
+}

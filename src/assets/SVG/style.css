@@ -1,0 +1,10 @@
+.background {
+    position: absolute;
+    z-index: -1;
+
+}
+
+.logo {
+    margin-left: 50px;
+    margin-top: 30px;
+}

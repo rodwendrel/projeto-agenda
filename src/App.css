@@ -5,7 +5,7 @@
     --light-second-color: hsl(216, 73%, 45%);
     --white-color: hsl(0, 0%, 98%); 
     --black-color: hsl(0, 0%, 15%);
-    --black-color-light: rgba(38, 38, 38, .2);
+    --black-color-light: rgba(38, 38, 38, .4);
 
     --text-font: 'Roboto', sans-serif;
     --display-font: 'Poppins', sans-serif;
@@ -21,20 +21,4 @@
 body {
     background-color: var(--second-color);
     font-family: var(--text-font);
-}
-
-.baloon {
-    position: absolute;
-    z-index: -1;
-    left: 300px;
-    top: 200px;
-}
-
-.baloonbg {
-    position: absolute;
-    z-index: -2;
-    left: 950px;
-    width: 50vw;
-    height: 100vh;
-
 }
