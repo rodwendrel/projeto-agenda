@@ -42,18 +42,3 @@
 }
 
 
-.baloon {
-    position: absolute;
-    z-index: -1;
-    left: 300px;
-    top: 250px;
-}
-
-.baloonbg {
-    position: absolute;
-    z-index: -2;
-    left: 950px;
-    width: 50vw;
-    height: 100vh;
-
-}
