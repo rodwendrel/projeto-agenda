@@ -5,10 +5,22 @@ import './style.css';
 function RegisterContact() {
     return (
         <div> 
-            <Background className="background" />
-            <Nav />
+            <div>
+                <Background className="background" />
+                <Nav />               
+            </div>
+            
+            <div>
+                <h1 className="no-contact">Parece que você não possui nenhum contato :(</h1>
+                <p className="connect">Se conecte com seus amigos agora mesmo!</p>        
+            </div>
 
-        </div>
+            <div className="button-section" >
+                <button className="btn">ADICIONAR CONTATOS</button>
+                
+            </div>
+        </div>   
+      
     )
 }
 
