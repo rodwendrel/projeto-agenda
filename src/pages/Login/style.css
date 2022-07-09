@@ -3,6 +3,7 @@
 
     display: flex;
     justify-content: space-around;
+    align-items: flex-start;
     margin-top: 25vh;
 
 }
@@ -25,11 +26,8 @@
     padding: 25px 15px;
     border-radius: 50px;
     width: 200px;
-    height: 10px;
     text-align: center;
     line-height: 100%;
-    
-
 }
 
 .left-content {

@@ -1,0 +1,26 @@
+.options{
+    font-family: var(--text-font);
+    font-style: normal;
+    font-weight: bold;
+    font-size: 24px;
+        
+    color: var(--white-color);
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    position: fixed;
+    width: 90vw;
+    left: calc(50% - 90vw/2);
+    top: 1vw;
+}
+
+.nav-options{
+    display: flex;
+    align-items: end;
+    padding: 0px;
+    gap: 50px;
+}

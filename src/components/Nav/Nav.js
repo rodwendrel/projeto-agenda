@@ -1,12 +1,16 @@
-import Logo from "../../assets/Logo/Logo";
+import Logo from "../../assets/SVG/Logo";
+import { Link } from 'react-router-dom';
+import '../Nav/style.css'
 
 function Nav() {
     return (
-
-        <Nav>
-              <Logo />
-        </Nav>
-
+        <nav>
+            <Logo />
+            <div className="nav-options">
+                <span><Link className="options" to="/contact">Contato</Link></span>
+                <span><Link className="options" to="/">Sair</Link></span>
+            </div>
+        </nav>
     );
 }
 

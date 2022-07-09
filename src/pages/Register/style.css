@@ -6,23 +6,24 @@
     margin-top: 100px;
 }
 
-.label {
-    width: 17.7vw;
-    text-align: left;
-    margin-top: 25px;
-    font-size: 20px;
-}
-
-.re {
-    margin-top: 2px;
-    margin-bottom: 20px;
-}
-
 .text {
     font-size: 11px;
-    margin-top: 30px;
 }
 
 .text a {
     color: var(--black-color);
+}
+
+.logo {
+    position: fixed;
+    left: 5vw;
+    top: 1vw;
+}
+
+.button-section{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 20px;
+    align-items: center;
 }

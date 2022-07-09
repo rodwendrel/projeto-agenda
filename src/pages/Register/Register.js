@@ -5,41 +5,42 @@ import { Link } from 'react-router-dom';
  
 function Register() {
     return (
-
         <div className="Register">
-
             <Background className="background" />
-
-            <span className="logo"><Logo /></span>
-
-
-            <form className="form register">
+            <div className="logo"><Logo /></div>
+            
+            <form>
                 <h2>Crie sua conta</h2>
-
-                <label className="label">Usuário</label>
-                <input
-                    type="text"
-                    placeholder="digite um nome usuário"
-                    className="input re"
-                />
-
-                <label className="label">Email</label>
-                <input
-                    type="text"
-                    placeholder="digite um endereço de email"
-                    className="input re"
-                />
-
-                <label className="label">Senha</label>
-                <input
-                    type="password"
-                    placeholder="digite uma senha"
-                    className="input re"
-                />
-
-                <button className='input login'>CRIAR CONTA</button>
-
-                <p className='text'>JÁ POSSUI UMA CONTA? ENTRE <Link to="/">AQUI</Link></p>
+                
+                <div className="section">
+                    <label>Usuário</label>
+                    <input
+                        type="text"
+                        placeholder="Digite um nome Usuário"
+                        className="input re"
+                    />
+                </div>
+                
+                <div className="section">
+                    <label>Email</label>
+                    <input
+                        type="text"
+                        placeholder="Digite um endereço de Email"
+                        className="input re"
+                    />
+                </div>
+                <div className="section">
+                    <label>Senha</label>
+                    <input
+                        type="password"
+                        placeholder="Digite uma Senha"
+                        className="input re"
+                    />
+                </div>
+                <div className="button-section">
+                    <button>CRIAR CONTA</button>
+                    <p className='text'>JÁ POSSUI UMA CONTA? ENTRE <Link to="/">AQUI</Link></p>
+                </div>
             </form>
         </div>
 

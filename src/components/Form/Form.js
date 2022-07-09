@@ -3,21 +3,20 @@ import './style.css';
 function LoginForm() {
     return(
         <div className="LoginForm">
-            <form className="log-in form">
-                <h2>Entre com sua conta</h2>
+            <form className='login-form'>
+                <h2>Entre com a sua conta</h2>
 
                 <input 
-                    placeholder="usuário"
+                    placeholder="Usuário"
                     type="text"
                     className="input user"
                 />
                 <input 
-                    placeholder="senha"
+                    placeholder="Senha"
                     type="password"
                     className="input password"
                 />
-                <button className='input login'>Entrar</button>
-
+                <button>Entrar</button>
             </form>
 
         </div>

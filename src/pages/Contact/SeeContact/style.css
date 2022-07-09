@@ -1,0 +1,10 @@
+.form-response{
+    width: 100%;
+    border: none;
+    border-bottom: 1px solid var(--black-color);
+
+    color: var(--black-color);
+    
+    outline: none;
+    font-family: var(--display-font);
+}

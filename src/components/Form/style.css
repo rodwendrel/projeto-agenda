@@ -6,48 +6,69 @@
 
 }
 
-.form {
+form {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    padding: 50px 50px;
+    gap: 50px;
+    
+    width: 30vw;
+    height: auto;
 
+    margin: 100px auto 100px;
+
+    background: var(--white-color);
+    box-shadow: 0px 5px 100px rgba(0, 0, 0, 0.05);
     border-radius: 50px;
-    background-color: var(--white-color);
 }
 
 
 /* Css formulário */
 
-.form h2 {
+form h2 {
     color: var(--black-color);
 }
 
 
-.input {
-    width: 338px ;
+input {
+    width: 100%;
     border: none;
     border-bottom: 1px solid var(--black-color-light);
 
-    color: var(--black-color-light);
-    background-color: var(--white-color);
-    
+    color: var(--black-color-light);    
 
     outline: none;
-
-    margin-top: 50px;
-    
+        
     font-family: var(--display-font);
 }
 
-.input:focus, textarea:focus {
+input:focus, textarea:focus {
     color: var(--black-color);
 }
 
+input re {
+    margin-top: 2px;
+    margin-bottom: 20px;
+}
+
+label {
+    width: 17.7vw;
+    text-align: left;
+    font-size: 20px;
+}
+
+/* Cada section do form engloba um label e um input*/
+.section{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 20px;
+}
 
 /* CSS para o botão de login do formulário */
 
-.login {
+form button {
     background-color: var(--primary-color);
     color: var(--white-color);
     width: 200px;
@@ -61,9 +82,14 @@
     transition: .8s;
 }
 
-.login:hover {
+form button:hover {
     border:1px solid var(--primary-color);
     color: var(--black-color);
     background-color: var(--white-color);
 
+}
+
+.login-form{
+    margin-top: 0px;
+    width: 20vw;
 }
