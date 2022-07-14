@@ -28,7 +28,7 @@ th, td {
 }
 
 .edit-button {
-    background-color: var(--white-color);   ;    
+    background-color: var(--white-color);      
     border: none;
     display: flex;    
     flex-direction: column;
