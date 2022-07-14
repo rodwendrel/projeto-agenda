@@ -1,6 +1,7 @@
 import Background from '../../../assets/SVG/Background';
 import Nav from '../../../components/Nav/Nav';
 import './style.css'; 
+import {Link} from 'react-router-dom';
 
 function RegisterContact() {
     return (
@@ -16,7 +17,7 @@ function RegisterContact() {
             </div>
 
             <div className="button-section" >
-                <button className="btn">ADICIONAR CONTATOS</button>
+                <Link className="btn" to="/contact/register">ADICIONAR CONTATOS</Link>            
                 
             </div>
         </div>   

@@ -17,18 +17,8 @@ th, td {
     width: auto;
 }
 
-.delete-button {
-    background-color: var(--white-color);   ;    
-    border: none;
-    display: flex;    
-    flex-direction: column;
-    width: 100%;   
-    align-items: center; 
-    cursor: pointer;
-}
-
-.edit-button {
-    background-color: var(--white-color);      
+.add-button, .delete-button, .edit-button {
+    background-color: var(--white-color);       
     border: none;
     display: flex;    
     flex-direction: column;
