@@ -16,7 +16,11 @@ function RegisterContact() {
                     <label>Nome</label>
 
                     {/* cada text sera substituido com o valor recebido da variavel do contato clicado*/}
-                    <text className="form-response">Nome</text>
+                    <text
+                    className="form-response"
+                    >
+                        Nome
+                    </text>
                 </div>
                 <div className='section'>
                     <label>Sobrenome</label>

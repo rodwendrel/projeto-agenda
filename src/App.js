@@ -1,10 +1,10 @@
 import { Routes, Route } from 'react-router-dom';
-import Login from "./pages/Login/Login.js";
-import Register from './pages/Register/Register';
-import RegisterContact from './pages/Contact/RegisterContact/RegisterContact.js';
-import NoContact from './pages/Home/NoContact/NoContact';
-import ListContact from './pages/Home/ListContact/ListContact';
-import SeeContact from './pages/Contact/SeeContact/SeeContact';
+import Login from "./frontend/pages/Login/Login";
+import Register from './frontend//pages/Register/Register';
+import RegisterContact from './frontend//pages/Contact/RegisterContact/RegisterContact.js';
+import NoContact from './frontend//pages/Home/NoContact/NoContact';
+import ListContact from './frontend//pages/Home/ListContact/ListContact';
+import SeeContact from './frontend//pages/Contact/SeeContact/SeeContact';
 import './App.css'
 
 
@@ -25,7 +25,7 @@ function App() {
         <Route path="/contact/listcontact" element={<ListContact />} />
 
         {/* :contactId seria substituida pela id do contato que se deseja abrir */}
-        <Route path="/contact/:contactId" element={<SeeContact />} />
+        <Route path="/contact/seecontact" element={<SeeContact />} />
       </Routes>
     </div>
   );
