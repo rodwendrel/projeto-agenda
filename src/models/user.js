@@ -1,3 +1,5 @@
+'use strict';
+
 const mongoose = require('../database');
 
 const UserSchema = new mongoose.Schema({
@@ -20,6 +22,7 @@ const UserSchema = new mongoose.Schema({
         type: String,
         require: true,
         select: false,
+        trim: true, //remove espaços a frente e atrás da String
     },
 
     createdAt: {
