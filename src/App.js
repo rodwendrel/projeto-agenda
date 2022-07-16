@@ -1,10 +1,10 @@
 import { Routes, Route } from 'react-router-dom';
-import Login from "./frontend/pages/Login/Login";
-import Register from './frontend//pages/Register/Register';
-import RegisterContact from './frontend//pages/Contact/RegisterContact/RegisterContact.js';
-import NoContact from './frontend//pages/Home/NoContact/NoContact';
-import ListContact from './frontend//pages/Home/ListContact/ListContact';
-import SeeContact from './frontend//pages/Contact/SeeContact/SeeContact';
+import Login from "./view/pages/Login/Login";
+import Register from './view/pages/Register/Register';
+import RegisterContact from './view/pages/Contact/RegisterContact/RegisterContact.js';
+import NoContact from './view/pages/Home/NoContact/NoContact';
+import ListContact from './view/pages/Home/ListContact/ListContact';
+import SeeContact from './view/pages/Contact/SeeContact/SeeContact';
 import './App.css'
 
 

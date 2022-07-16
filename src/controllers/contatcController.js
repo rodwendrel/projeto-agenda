@@ -7,12 +7,12 @@ const Contact = mongoose.model('Contact');
 
 exports.get = (req, res, next) => {
     Contact
-    .find({},'name secondName phone email')        
-    .then(data => {
-        res.status(200).send(data);
-    }).catch(e => {
-        res.status(400).send(e);
-    });
+        .find({}, 'name secondName phone email')
+        .then(data => {
+            res.status(200).send(data);
+        }).catch(e => {
+            res.status(400).send(e);
+        });
 }
 
 //cadastra usuários
@@ -22,13 +22,13 @@ exports.post = (req, res, next) => {
     contacts
         .save()
         .then(x => {
-            res.status(201).send({ 
-                message: 'Contato cadastrado com sucesso!' 
+            res.status(201).send({
+                message: 'Contato cadastrado com sucesso!'
             });
         }).catch(e => {
-            res.status(400).send({ 
-                message: 'Falha ao cadastrar contato', 
-                data: e 
+            res.status(400).send({
+                message: 'Falha ao cadastrar contato',
+                data: e
             });
         });
 }
@@ -36,24 +36,35 @@ exports.post = (req, res, next) => {
 exports.put = (req, res, next) => {
     Contact
         .findByIdAndUpdate(req.params.id, {
-        $set: {
-            name: req.body.name,
-         /*   secondName: req.body.secondName,
-            phone: req.body.phone,
-            email: req.body.email*/
-        }
-    }).then(x => {
-        res.status(200),send({
-            message: 'Contato atualizado!'
+            $set: {
+                name: req.body.name,
+                secondName: req.body.secondName,
+                phone: req.body.phone,
+                email: req.body.email
+            }
+        }).then(x => {
+            res.status(200).send({
+                message: 'Contato atualizado!'
+            });
+        }).catch(e => {
+            res.status(400).send({
+                message: 'Falha ao atualizar contato!',
+                data: e
+            });
         });
-    }).catch(e => {
-        res.status(400).send({
-            message: 'Falha ao atualizar contato!',
-            data: e
-        });
-    });
 };
 
 exports.delete = (req, res, next) => {
-    res.status(200).send(req.body);
+    Contact
+        .findOneAndRemove(req.params.id, {
+        }).then(x => {
+            res.status(200).send({
+                message: 'Contato removido!'
+            });
+        }).catch(e => {
+            res.status(400).send({
+                message: 'Falha ao remover contato!',
+                data: e
+            });
+        });
 }

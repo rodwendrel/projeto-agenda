@@ -1,9 +1,27 @@
-import '../RegisterContact/style.css';
+import React, { useState } from 'react';
+import './style.css';
 import Background from '../../../assets/SVG/Background';
 import Nav from '../../../components/Nav/Nav';
-import './style.css'; 
+import './style.css';
+import api from '../../../../services/api';
 
 function RegisterContact() {
+    const [ name, setName ] = useState('')
+    const [ secondName, setSecondName ] = useState('')
+    const [ email, setEmail ] = useState('')
+    const [ phone, setPhone] = useState('')
+
+    function handleSubmit (e){
+        const data = {
+            name,
+            secondName,
+            email,
+            phone
+        }
+
+        console.log(data)
+    }
+
     return (
         <div> 
             <div>
@@ -11,7 +29,7 @@ function RegisterContact() {
                 <Nav />
             </div>  
 
-            <form>
+            <form method='POST'>
                 <h2>Crie seu contato</h2>
                 <div className='section'>
                     <label>Nome</label>
@@ -19,6 +37,8 @@ function RegisterContact() {
                         type="text"
                         placeholder="Digite um Nome"
                         className="input re"
+                        value={name}
+                        onChange={e => setName(e.target.value)}
                     />
                 </div>
                 <div className='section'>
@@ -27,6 +47,9 @@ function RegisterContact() {
                         type="text"
                         placeholder="Digite um Sobrenome"
                         className="input re"
+                        value={secondName}
+                        onChange={e => setSecondName(e.target.value)}
+
                     />
                 </div>
                 <div className='section'>
@@ -35,6 +58,9 @@ function RegisterContact() {
                         type="text"
                         placeholder="Digite um Email"
                         className="input re"
+                        value={email}
+                        onChange={e => setEmail(e.target.value)}
+
                     />
                 </div>
                 <div className='section'>
@@ -43,9 +69,12 @@ function RegisterContact() {
                         type="text"
                         placeholder="Digite um Telefone"
                         className="input re"
+                        value={phone}
+                        onChange={e => setPhone(e.target.value)}
+
                     />
                 </div>
-                <button>CRIAR CONTA</button>
+                <button onSubmit={handleSubmit}>CRIAR CONTA</button>
             </form>
         </div>
     )
