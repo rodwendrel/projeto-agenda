@@ -3,6 +3,20 @@
 const mongoose = require('mongoose');
 const User = mongoose.model('User');
 
+//lista usuários
+
+exports.get = (req, res, next) => {
+    User
+    .find({},'user email')        
+    .then(data => {
+        res.status(200).send(data);
+    }).catch(e => {
+        res.status(400).send(e);
+    });
+}
+
+//cadastra usuários
+
 exports.post = (req, res, next) => {
     let user = new User(req.body);
     user
@@ -17,7 +31,6 @@ exports.post = (req, res, next) => {
                 data: e 
             });
         });
-    res.status(201).send(req.body);
 }
 
 exports.put = (req, res, next) => {
