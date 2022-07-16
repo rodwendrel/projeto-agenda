@@ -18,7 +18,6 @@ exports.get = (req, res, next) => {
 //cadastra usuários
 
 exports.post = (req, res, next) => {
-    //const {name_contact, secondName_contact, email_contact, phone_contact} = req.body
     let contacts = new Contact(req.body);
     contacts
         .save()

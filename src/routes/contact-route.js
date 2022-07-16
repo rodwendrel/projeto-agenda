@@ -5,10 +5,10 @@ const router = express.Router();
 
 const controller = require('../controllers/contatcController');
 
-router.get('/contacts', controller.get);
-router.post('/contacts', controller.post);
-router.put('/contacts/:id', controller.put);
-router.delete('/contacts/:id', controller.delete);
+router.get('/', controller.get);
+router.post('/', controller.post);
+router.put('/:id', controller.put);
+router.delete('/:id', controller.delete);
 
 router.put('/:id', (req, res, next) => { 
 

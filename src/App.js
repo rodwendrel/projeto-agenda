@@ -14,7 +14,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Login />} />
         <Route path="/register" element={<Register />} />
-        <Route path="/contact/register" element={<RegisterContact />} />
+        <Route path="/contacts" element={<RegisterContact />} />
         
         {/*
         Imaginei dessas duas telas serem a home, apos ser feito o login a rota "/" viraria uma dessas duas.

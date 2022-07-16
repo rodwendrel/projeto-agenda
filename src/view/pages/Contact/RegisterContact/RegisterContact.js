@@ -13,9 +13,9 @@ function RegisterContact() {
 
     const RegisterContactURL = 'http://localhost:3030/contacts'
 
-    async function handleSubmit (e){
+    const handleSubmit= (e) => {
         e.preventDefault();
-    
+        
         api.post(RegisterContactURL, {
             "name": `${name}`,
             "secondName": `${secondName}`,
@@ -24,7 +24,7 @@ function RegisterContact() {
         }).then(() => {
             console.log("Deu tudo certo!")
         }).catch((error) => {
-            console.log("Deu tudo errado!")
+            console.error(error.toJSON());
         })
     }
 
