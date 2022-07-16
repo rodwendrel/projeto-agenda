@@ -1,8 +1,19 @@
+import React, { useState } from 'react'
 import Background from '../../../assets/SVG/Background';
 import Nav from '../../../components/Nav/Nav';
 import './style.css'; 
 
-function RegisterContact() {
+function RegisterContact({data}) {
+    /* const [ changedContact, setchangedContact ] = useState('')
+
+    async function handleSave(e, contacts) {
+        if(changedContact && changedContact !== contacts){
+            await api.contact(`/contents/${data._id}`, {
+                contact: changedContact,
+            })
+        }
+    }*/
+
     return (
         <div> 
             <div>
@@ -17,9 +28,10 @@ function RegisterContact() {
 
                     {/* cada text sera substituido com o valor recebido da variavel do contato clicado*/}
                     <text
-                    className="form-response"
+                        className="form-response"
+                        /* onChange={ e => setchangedContact(e.target.value)}
+                        onBlur={e => handleSave(e.target, data.contacts)} */
                     >
-                        Nome
                     </text>
                 </div>
                 <div className='section'>
