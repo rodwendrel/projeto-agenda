@@ -19,9 +19,11 @@ exports.get = (req, res, next) => {
 
 exports.post = (req, res, next) => {
     let user = new User(req.body);
+    let { email } = req.body;
     user
         .save()
         .then(x => {
+            
             res.status(201).send({ 
                 message: 'Usuário cadastrado com sucesso!' 
             });
