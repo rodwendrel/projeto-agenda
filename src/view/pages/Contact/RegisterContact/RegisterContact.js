@@ -22,7 +22,7 @@ function RegisterContact() {
             "email": `${email}`,
             "phone": `${phone}`
         }).then(() => {
-            console.log("Deu tudo certo!")
+            window.location.href="/contacts/"
         }).catch((error) => {
             console.error(error.toJSON());
         })

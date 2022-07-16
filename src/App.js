@@ -14,18 +14,18 @@ function App() {
       <Routes>
         <Route path="/" element={<Login />} />
         <Route path="/register" element={<Register />} />
-        <Route path="/contacts" element={<RegisterContact />} />
+        <Route path="/contacts/register" element={<RegisterContact />} />
         
         {/*
         Imaginei dessas duas telas serem a home, apos ser feito o login a rota "/" viraria uma dessas duas.
         1. Caso a pessoa logada nao tenha contatos: NoContact
         2. Caso tenha: ListContact
         */}
-        <Route path="/contact/nocontact" element={<NoContact />} />
-        <Route path="/contact/listcontact" element={<ListContact />} />
+        <Route path="/contacts/" element={<NoContact />} />
+        <Route path="/contacts/listcontact" element={<ListContact />} />
 
         {/* :contactId seria substituida pela id do contato que se deseja abrir */}
-        <Route path="/contact/seecontact" element={<SeeContact />} />
+        <Route path="/contacts/seecontact" element={<SeeContact />} />
       </Routes>
     </div>
   );
