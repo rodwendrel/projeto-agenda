@@ -11,15 +11,21 @@ function RegisterContact() {
     const [ email, setEmail ] = useState('')
     const [ phone, setPhone] = useState('')
 
-    function handleSubmit (e){
-        const data = {
-            name,
-            secondName,
-            email,
-            phone
-        }
+    const RegisterContactURL = 'http://localhost:3030/contacts'
 
-        console.log(data)
+    async function handleSubmit (e){
+        e.preventDefault();
+    
+        api.post(RegisterContactURL, {
+            "name": `${name}`,
+            "secondName": `${secondName}`,
+            "email": `${email}`,
+            "phone": `${phone}`
+        }).then(() => {
+            console.log("Deu tudo certo!")
+        }).catch((error) => {
+            console.log("Deu tudo errado!")
+        })
     }
 
     return (
@@ -37,6 +43,7 @@ function RegisterContact() {
                         type="text"
                         placeholder="Digite um Nome"
                         className="input re"
+                        required
                         value={name}
                         onChange={e => setName(e.target.value)}
                     />
@@ -47,6 +54,7 @@ function RegisterContact() {
                         type="text"
                         placeholder="Digite um Sobrenome"
                         className="input re"
+                        required
                         value={secondName}
                         onChange={e => setSecondName(e.target.value)}
 
@@ -58,6 +66,7 @@ function RegisterContact() {
                         type="text"
                         placeholder="Digite um Email"
                         className="input re"
+                        required
                         value={email}
                         onChange={e => setEmail(e.target.value)}
 
@@ -69,12 +78,13 @@ function RegisterContact() {
                         type="text"
                         placeholder="Digite um Telefone"
                         className="input re"
+                        required
                         value={phone}
                         onChange={e => setPhone(e.target.value)}
 
                     />
                 </div>
-                <button onSubmit={handleSubmit}>CRIAR CONTA</button>
+                <button onClick={handleSubmit}>CRIAR CONTA</button>
             </form>
         </div>
     )

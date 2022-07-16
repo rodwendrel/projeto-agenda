@@ -5,10 +5,10 @@ const router = express.Router();
 
 const controller = require('../controllers/userController');
 
-router.get('/', controller.get);
-router.post('/', controller.post);
-router.put('/:id', controller.put);
-router.delete('/:id', controller.delete);
+router.get('/users', controller.get);
+router.post('/users', controller.post);
+router.put('/users/:id', controller.put);
+router.delete('/users/:id', controller.delete);
 
 router.put('/:id', (req, res, next) => { 
 
