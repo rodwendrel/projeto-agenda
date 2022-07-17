@@ -1,34 +1,32 @@
-'use strict';
+"use strict";
 
-const mongoose = require('../database');
+const mongoose = require("../database");
 
 const ContactSchema = new mongoose.Schema({
+  name: {
+    type: String,
+    required: true,
+  },
 
-    name: {
-        type: String,
-        required: true,
-    },
+  secondName: {
+    type: String,
+  },
 
-    secondName: {
-        type: String,
-    },
+  phone: {
+    type: String,
+    required: true,
+  },
 
-    phone: {
-        type: String,
-        required: true,
-    },
+  email: {
+    type: String,
+  },
 
-    email: {
-        type: String,
-    },
-
-    createdAt: {
-        type: Date,
-        default: Date.now,
-    },
-    
+  createdAt: {
+    type: Date,
+    default: Date.now,
+  },
 });
 
-const Contact = mongoose.model('Contact', ContactSchema);
+const Contact = mongoose.model("Contact", ContactSchema);
 
 module.exports = Contact;

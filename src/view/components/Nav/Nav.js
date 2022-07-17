@@ -7,7 +7,7 @@ function Nav() {
         <nav>
             <Logo />
             <div className="nav-options">
-                <span><Link className="options" to="/contact">Contato</Link></span>
+                <span><Link className="options" to="/contacts">Contato</Link></span>
                 <span><Link className="options" to="/">Sair</Link></span>
             </div>
         </nav>

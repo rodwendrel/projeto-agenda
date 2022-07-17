@@ -1,116 +1,74 @@
-import Background from '../../../assets/SVG/Background';
-import Nav from '../../../components/Nav/Nav';
-import './style.css'; 
-import {FaTrashAlt} from 'react-icons/fa';
-import {BsPen} from 'react-icons/bs';
-import {IoIosAddCircle} from 'react-icons/io';
-import {Link} from 'react-router-dom';
+import React, { useState, useEffect } from "react";
+import Background from "../../../assets/SVG/Background";
+import Nav from "../../../components/Nav/Nav";
+import "./style.css";
+import { IoIosAddCircle } from "react-icons/io";
+import { Link } from "react-router-dom";
+import api from "../../../../services/api";
 
-function RegisterContact() {
-    return (
-        <div> 
-          <div>
-            <Background className="background" />
-            <Nav />
-          </div>
-     
-          <div className="table">
-            <table className="table-section">
-                <tr>
-                    <th>Nome</th>
-                    <th>Telefone</th>  
-                    <th></th> 
-                    <th>
-                        <button className="add-button">
-                            <IoIosAddCircle
-                                size={18}
-                                color="#1B7CD6"
-                                background="fff"
-                            />
-                        </button>
-                    
-                    </th>                 
-                </tr>
+import TableRowName from "../../../components/TableRow/TableRowName";
+import TableRowPhone from "../../../components/TableRow/TableRowPhone";
+import TableRowEdit from "../../../components/TableRow/TableRowEdit";
+import TableRowDelete from "../../../components/TableRow/TableRowDelete";
 
-                <tr>
-                    <td>Joãozinho da Silva</td>
-                    <td>+99 (99) 99999-9999</td>   
-                    <td>
-                        <button className="edit-button">
-                            <Link to="/contact/register">
-                                <BsPen
-                                    size={18}
-                                    color="#1B7CD6"
-                                    background="fff"                                                          
-                                />
-                            </Link>
-                        </button>                        
-                    </td>               
-                    <td>
-                        <button className="delete-button">
-                            <FaTrashAlt
-                                size={18}
-                                color="#1F62C6"
-                                Background="#fff"
-                            />
-                        </button>                        
-                    </td>    
-                </tr>
+import { FaTrashAlt } from "react-icons/fa";
+import { BsPen } from "react-icons/bs";
 
-                <tr>
-                    <td>Joãozinho da Silva</td>
-                    <td>+99 (99) 99999-9999</td>  
-                    <td>
-                        <button className="edit-button">
-                            <Link to="/contact/register">
-                                <BsPen
-                                    size={18}
-                                    color="#1B7CD6"
-                                    background="fff"                                                          
-                                />
-                            </Link>
-                        </button>   
-                    </td>       
-                    <td>
-                        <button className="delete-button">
-                            <FaTrashAlt
-                                size={18}
-                                color="#1F62C6"
-                                Background="#fff"
-                            />
-                        </button> 
-                    </td>                         
-                </tr>
+function ListContact() {
+  const SeeContactURL = "http://localhost:3030/contacts";
+  const [contacts, getContacts] = useState("");
 
-                <tr>
-                    <td>Joãozinho da Silva</td>
-                    <td>+99 (99) 99999-9999</td>
-                    <td>
-                        <button className="edit-button">
-                            <Link to="/contact/register">
-                                <BsPen
-                                    size={18}
-                                    color="#1B7CD6"
-                                    background="fff"                                                          
-                                />
-                            </Link>
-                        </button>   
-                    </td>                  
-                    <td>
-                        <button className="delete-button">
-                            <FaTrashAlt
-                                size={18}
-                                color="#1F62C6"
-                                Background="#fff"
-                            />
-                        </button>                         
-                    </td>                    
-                </tr>
-            </table>
-          </div>
+  useEffect(() => {
+    getAllContacts();
+  }, []);
 
-        </div>
-    )
+  const getAllContacts = () => {
+    api
+      .get(SeeContactURL)
+      .then((response) => {
+        const allContacts = response.data;
+        console.log(response.data);
+        console.log(allContacts);
+        getContacts(allContacts);
+      })
+      .catch((error) => {
+        alert("Falha ao cadastrar contato");
+        console.error(error);
+      });
+    return {};
+  };
+
+  return (
+    <div>
+      <div>
+        <Background className="background" />
+        <Nav />
+      </div>
+
+      <div className="table">
+        <table className="table-section">
+          <tr>
+            <th>Nome</th>
+            <th>Telefone</th>
+            <th></th>
+            <th>
+              <button className="add-button">
+                <Link to="contacts/register">
+                  <IoIosAddCircle size={40} color="#1B7CD6" background="fff" />
+                </Link>
+              </button>
+            </th>
+          </tr>
+          <tr>
+            <td><TableRowName contacts={contacts}/></td>
+            <td><TableRowPhone contacts={contacts}/></td>
+            <td> <TableRowEdit contacts={contacts}/></td>
+            <td> <TableRowDelete contacts={contacts}/></td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  );
 }
 
-export default RegisterContact;
+export default ListContact;

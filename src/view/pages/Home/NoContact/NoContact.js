@@ -17,11 +17,10 @@ function RegisterContact() {
             </div>
 
             <div className="button-section" >
-                <Link className="btn" to="/contact/register">ADICIONAR CONTATOS</Link>            
+                <Link className="btn" to="/contacts/register">ADICIONAR CONTATOS</Link>            
                 
             </div>
         </div>   
-      
     )
 }
 

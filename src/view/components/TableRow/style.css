@@ -1,0 +1,25 @@
+.table-row {
+  display: flex;
+  flex-direction: row;
+  gap: 15px;
+  padding: 15px 0;
+  text-align: left;
+  width: auto;
+  justify-content: center;
+  text-decoration: none;
+}
+
+.delete-button,
+.edit-button {
+  background-color: var(--white-color);
+  border: none;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: center;
+  cursor: pointer;
+}
+
+.table-column{
+  width: 100px;
+}
