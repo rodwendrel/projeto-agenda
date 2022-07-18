@@ -3,37 +3,36 @@ import './style.css';
 import Background from '../../../assets/SVG/Background';
 import Nav from '../../../components/Nav/Nav';
 import './style.css';
-import api from '../../../../services/api';
+import axios from 'axios';
 
 function RegisterContact() {
-    const [ name, setName ] = useState('')
-    const [ secondName, setSecondName ] = useState('')
-    const [ email, setEmail ] = useState('')
-    const [ phone, setPhone] = useState('')
+    const [name, setName] = useState('')
+    const [secondName, setSecondName] = useState('')
+    const [email, setEmail] = useState('')
+    const [phone, setPhone] = useState('')
 
-    const RegisterContactURL = 'http://localhost:3030/contacts'
-
-    const handleSubmit= (e) => {
+    const handleSubmit = (e) => {
         e.preventDefault();
-        
-        api.post(RegisterContactURL, {
-            "name": `${name}`,
-            "secondName": `${secondName}`,
-            "email": `${email}`,
-            "phone": `${phone}`
-        }).then(() => {
-            window.location.href="/contacts/"
-        }).catch((error) => {
-            console.error(error.toJSON());
-        })
-    }
+
+        axios
+            .post('http://localhost:3030/contacts', {
+                name: name,
+                secondName: secondName,
+                email: email,
+                phone: phone
+            }).then(() => {
+                window.location.href = "/contacts/"
+            }).catch((error) => {
+                console.error(error.toJSON());
+            });
+    };
 
     return (
-        <div> 
+        <div>
             <div>
                 <Background className="background" />
                 <Nav />
-            </div>  
+            </div>
 
             <form method='POST'>
                 <h2>Crie seu contato</h2>

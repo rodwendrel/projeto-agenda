@@ -1,9 +1,34 @@
 import Baloon from '../../assets/SVG/Baloon';
 import Baloonbg from '../../assets/SVG/Baloonbg';
 import { Link } from 'react-router-dom';
+import axios from 'axios';
+import { useState } from 'react';
 import './style.css';
 
+
 function Login() {
+    const [user, setUser] = useState("");
+    const [password, setPassword] = useState("");
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+
+        axios
+            .post('http://localhost:3030/register/auth', {
+                user: user,
+                password: password
+            })
+            .then(() => {
+                alert("Login feito com sucesso!");
+                window.location.href = "/contacts/";
+            })
+            .catch((error) => {
+                alert("Falha ao fazer login");
+                console.error(error.toJSON());
+            });
+    };
+
+
     return (
 
         <div className="Login">
@@ -19,17 +44,21 @@ function Login() {
                     <form className='login-form'>
                         <h2>Entre com a sua conta</h2>
 
-                        <input 
+                        <input
                             placeholder="Usuário"
                             type="text"
                             className="input user"
+                            value={user}
+                            onChange={(e) => setUser(e.target.value)}
                         />
-                        <input 
+                        <input
                             placeholder="Senha"
                             type="password"
                             className="input password"
+                            value={password}
+                            onChange={(e) => setPassword(e.target.value)}
                         />
-                        <button>Entrar</button>
+                        <button onClick={handleSubmit}>Entrar</button>
                     </form>
                 </div>
                 <Baloonbg className="baloonbg" />

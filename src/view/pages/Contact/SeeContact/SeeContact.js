@@ -1,50 +1,49 @@
 import React, { useState } from 'react'
 import Background from '../../../assets/SVG/Background';
 import Nav from '../../../components/Nav/Nav';
-import './style.css'; 
+import './style.css';
+import axios from 'axios';
 
-function RegisterContact({data}) {
-    /* const [ changedContact, setchangedContact ] = useState('')
+function RegisterContact({ data }) {
 
-    async function handleSave(e, contacts) {
-        if(changedContact && changedContact !== contacts){
-            await api.contact(`/contents/${data._id}`, {
-                contact: changedContact,
-            })
-        }
-    }*/
+    async function listContact() {
+        let data = [];
+
+        axios.get('http://localhost:3030/contacts')
+            .then(res => console.log(res))
+
+        console.log(data);
+    };
+
+    listContact()
 
     return (
-        <div> 
+        <div>
             <div>
                 <Background className="background" />
                 <Nav />
-            </div>  
+            </div>
 
             <form>
                 <h2>Crie seu contato</h2>
                 <div className='section'>
                     <label>Nome</label>
-
-                    {/* cada text sera substituido com o valor recebido da variavel do contato clicado*/}
-                    <text
+                    <input type='text'
                         className="form-response"
-                        /* onChange={ e => setchangedContact(e.target.value)}
-                        onBlur={e => handleSave(e.target, data.contacts)} */
-                    >
-                    </text>
+                    />
+                    
                 </div>
                 <div className='section'>
                     <label>Sobrenome</label>
-                    <text className="form-response">Sobrenome</text>
+                    <input type='text' className="form-response" />
                 </div>
                 <div className='section'>
                     <label>Email</label>
-                    <text className="form-response">Email</text>
+                    <input type='text' className="form-response" />
                 </div>
                 <div className='section'>
                     <label>Telefone</label>
-                    <text className="form-response">Telefone</text>
+                    <input type='text' className="form-response" />
                 </div>
                 <button>CRIAR CONTA</button>
             </form>

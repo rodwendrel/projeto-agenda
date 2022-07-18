@@ -22,7 +22,7 @@ function App() {
         2. Caso tenha: ListContact
         */}
         <Route path="/contacts/" element={<NoContact />} />
-        <Route path="/contacts/listcontact" element={<ListContact />} />
+        <Route path="/contacts/listcontact" element={ <ListContact />} />
 
         {/* :contactId seria substituida pela id do contato que se deseja abrir */}
         <Route path="/contacts/seecontact" element={<SeeContact />} />
